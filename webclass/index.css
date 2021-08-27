@@ -1,0 +1,44 @@
+header{
+  background-color: red;
+  height: 10rem;
+  width: 100%;
+}
+
+section{
+  background-color: white;
+  height: 50rem;
+  width: 70%;
+  float: left;
+}
+
+aside{
+  background-color:blue;
+  height: 50rem;
+  width: 29.5%;
+  float: right;
+}
+
+form{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: whitesmoke;
+  padding: 1rem;
+}
+
+form div{
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+
+}
+
+label{
+  padding-bottom: 0.3rem;
+}
+
+input{
+  padding: 0.8rem;
+  width: 100%;
+}
