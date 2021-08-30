@@ -1,0 +1,48 @@
+body{
+  display: flex;
+  flex-direction: row;
+}
+
+
+
+.className{
+  height: 30vh;
+  width: 30vw;
+  background-color: red;
+  margin: 1rem;
+}
+
+.secondClassName{
+  box-shadow: 20px 20px 20px black;
+  border-radius: 20px;
+  padding: 3rem;
+  background: blue url('ik.jpg');
+}
+
+.other-concepts{
+  display: flex;
+  flex-direction:column;
+}
+.btn, .input, .anchor{
+  padding: 0.6rem;
+  margin: 1.3rem;
+}
+
+.btn{
+  background-color: #3932E0FF;
+  border-style: none;
+  color: whitesmoke;
+  font-size: larger;
+  cursor: pointer;
+}
+
+.btn:hover{
+  background-color: rgb(231, 252, 114);
+  padding: 1rem;
+  box-shadow: 6px 6px 6px black;
+}
+.btn:focus{
+  
+}
+
+
