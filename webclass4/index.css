@@ -1,0 +1,39 @@
+.container{
+  display: flex;
+  flex-direction: row-reverse;
+  background-color: blue;
+  height:fit-content;
+  padding: 2rem;
+}
+
+.inner-1, .inner-2, .inner-3{
+  height: 20rem;
+  width: 20rem;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.inner-2{
+  margin-right: 1rem;
+  margin-left: 1rem;
+
+}
+
+.inner-1{
+  display: flex;
+  flex-direction: column;
+  justify-content:center;
+  align-items: center;
+}
+
+.div{
+  height: 3rem;
+  width: 9rem;
+  background-color: tomato;
+}
+
+.div:nth-child(2){
+  margin:2rem;
+}

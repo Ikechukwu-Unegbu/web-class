@@ -1,0 +1,54 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body{
+height: 25rem;
+}
+
+.menu-nav{
+  height: 3rem;
+  background-color: cornflowerblue;
+  position: fixed;
+  width: 100%;
+  
+}
+.menu-unordered-list{
+  list-style: none;
+  padding-top: 1rem;
+  /* float:right; */
+  text-align:center;
+
+}
+a{
+  text-decoration: none;
+  color: white;
+}
+
+.menu-list{
+  display: inline;
+  padding: 00.6rem;
+ 
+}
+li:hover{
+  background-color: white;
+  border-radius: 5px;
+  box-shadow: 5px 5px 5px black;
+  padding: 0.3rem;
+  color: black;
+}
+a:hover{
+  color: black;
+}
+
+
+/* FOOTER */
+.footer{
+  width: 100%;
+  position: fixed;        
+  background: #333;
+  padding: 10px 0;
+  color: #fff;
+  bottom: 0;
+}
