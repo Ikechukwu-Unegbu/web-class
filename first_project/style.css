@@ -254,6 +254,7 @@ header{
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  margin-top: 4rem;
 }
 
 .section-four .section-header{
@@ -261,6 +262,7 @@ header{
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  /* height: 600vh; */
 }
 .section-four .section-header h2, p{
   padding: 1.2rem;
