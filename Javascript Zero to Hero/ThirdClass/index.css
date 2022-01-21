@@ -26,3 +26,22 @@
   background-color:purple; 
   height:10rem;
 }
+
+#test_div{
+  height: 50vh;
+}
+
+.container{
+  padding: 4rem;
+}
+
+.bg{  
+  background-color: rgb(151, 116, 110);
+}
+
+.bg_success{
+  background-color: rgb(31, 228, 73);
+}
+.bg_warning{
+  background-color: rgb(31, 228, 73);
+}

@@ -40,3 +40,39 @@ console.log(classBasedEl);
 classBasedEl[0].innerText = "Successfully targeted the first box.";
 classBasedEl[0].style.background = 'yellow';
 
+
+let testDiv = document.getElementById('test_div');
+// testDiv.nodeValue
+testDiv.classList.replace('bg', 'bg_warning'); 
+console.log(testDiv.classList);
+
+//removing a child node
+let childNodeBox = document.getElementById('box2');
+childNodeBox.style.display = 'none';
+
+//testDiv.removeChild(childNodeBox);
+
+
+
+
+// EVENT LISTENERS
+let clickListeners = document.getElementById('click');
+let inputListener = document.getElementById('input');
+let mouseListener = document.getElementById('mouseover');
+
+clickListeners.addEventListener('click', function(){
+  clickListeners.innerText = 'You just clicked me';
+})
+
+mouseListener.addEventListener('mouseover', function(){
+  mouseListener.innerText = 'You just hovered';
+  mouseListener.style.color = 'white';
+  mouseListener.style.background = 'black';
+})
+
+
+inputListener.addEventListener('change', function(e){
+  console.log(e.target.value);
+  console.log(e);
+})
+
