@@ -1,0 +1,28 @@
+*{
+  box-sizing:border-box;
+}
+#test_div{
+  /* display:flex;
+  flex-direction:row; */
+  display:grid;
+  grid-gap:1rem;
+  grid-template-columns:1fr 1fr 1fr 1fr;
+
+}
+#box1{
+  background-color:grey;
+  height:10rem;
+
+}
+#box2{
+  background-color:blue;
+  height:10rem;
+}
+#box3{
+  background-color:red;
+  height:10rem;
+}
+#box4{
+  background-color:purple; 
+  height:10rem;
+}

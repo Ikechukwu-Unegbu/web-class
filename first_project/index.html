@@ -5,12 +5,61 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
  <link rel="stylesheet" href="style.css">
+ <!-- <link rel="stylesheet"  media="screen and (min-width: 425px)" href="mobile.css"> -->
  <link
  rel="stylesheet"
  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css"
  integrity="sha256-h20CPZ0QyXlBuAw7A+KluUYx/3pK+c7lYEpqLTlxjYQ="
  crossorigin="anonymous"/>
   <title>Document</title>
+  <style>
+   @media only screen and (max-width: 768px) {
+    .logo{
+      width: 100%;
+      /* display: flex;
+      justify-content: center;
+      align-items: center; */
+    }  
+    
+    .nav-logo{
+        display: flex;
+        flex-direction: column;
+        height: 5rem;
+      }
+
+      .nav-items{
+        /* display: inline; */
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+
+      }
+
+      .nav{
+      width: 100%;
+      }
+
+      .nav-items li{
+      display: inline;
+      }
+
+      .nav-items li a{
+      color: white;
+      /* padding: 1rem; */
+    }
+
+    .our-services{
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+}
+
+    
+    
+  
+  </style>
 </head>
 <body>
   <header class="header">
@@ -24,7 +73,7 @@
           <li><a href="">Home</a></li>
           <li><a href="">Our Services</a></li>
           <li><a href="">Blog</a></li>
-          <li><a href="">Contact Us</a></li>
+          <li><a href="#contactus">Contact Us</a></li>
           <li><a href="">About Us</a></li>
         </ul>
       </div>
@@ -102,6 +151,19 @@
   
     </div><!---end of section three div-->
 
+    <div class="section-five"><!---beginning of section five div-->
+      <div class="five-left">
+        <h4>7 Sep. 2021</h4>
+        <h1>First Blog Post</h1>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sit repellat rerum omnis eaque esse soluta exercitationem impedit qui ex itaque.</p>
+        <button class="btn-ash btn-extra">Read More</button>
+      </div>
+      <div class="five-right">
+        <img src="images/home/blog.jpg" alt="">
+      </div>
+    </div><!---end of section-five div-->
+
+
     <div class="section-four">
       <div class="section-header">
         <h4>Our Team</h4>
@@ -125,61 +187,45 @@
           <h5>President</h5>
         </div>
       </div>
-    </div>
-    <div class="section-five"><!---beginning of section five div-->
-      <div class="five-left">
-        <h4>7 Sep. 2021</h4>
-        <h1>First Blog Post</h1>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sit repellat rerum omnis eaque esse soluta exercitationem impedit qui ex itaque.</p>
-        <button class="btn-ash btn-extra">Read More</button>
-      </div>
-      <div class="five-right">
-        <img src="images/home/blog.jpg" alt="">
-      </div>
-    </div><!---end of section-five div-->
+    </div><!---end of section four-->
+    
 
+    
 
-    <div class="section-six"><!---section-six div-->
-      <header>
-        <h4></h4>
-        <h1></h1>
-        <p></p>
-      </header>
-      <div class="the-team">
-        <div class="team-member">
-          <img src="" alt="">
-          <h4></h4>
-          <h4></h4>
-        </div>
-        <div class="team-member">
-          <img src="" alt="">
-          <h4></h4>
-          <h4></h4>
-        </div>
-        <div class="team-member">
-          <img src="" alt="">
-          <h4></h4>
-          <h4></h4>
-        </div>
+    <section class="section_seven" id="contactus">
+      <div class="sectioin_seven_left">
+        <img src="https://images.unsplash.com/photo-1556745753-b2904692b3cd?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1266&q=80" alt="">
       </div>
-    </div><!----section six div ending-->
-
-    <div class="section-seven"><!--beginning of section-seven div-->
-      <div class="left">
-        <img src="" alt="">
+      <div class="section_seven_right">
+          <div class="call_back_header">
+            <h2>Request Call Back From Us</h2>
+          </div>
+          <form action="" class="contact_form">
+         
+              <input class="form-input" type="text" placeholder="Enter Name">
+           
+           
+              <input class="form-input" type="text" placeholder="Enter Email">
+            
+           
+              <input class="form-input" type="text" placeholder="Enter Phone no.">
+            
+            <button class="btn">Send Request</button>
+          </form>
       </div>
-      <div class="right"></div>
-    </div><!---end section seven div-->
-    <footer>
-      <div class="footer-container">
-        <div class="socials">
-
-        </div>
-        <div class="copy-rights">
-
-        </div>
+    </section> 
+    <footer class="footer">
+      <div class="social">
+        <a href="#"><i class="fab fa-facebook fa-2x"></i></a>
+        <a href="#"><i class="fab fa-twitter fa-2x"></i></a>
+        <a href="#"><i class="fab fa-youtube fa-2x"></i></a>
+        <a href="#"><i class="fab fa-linkedin fa-2x"></i></a>
       </div>
-    </footer> 
+      <div class="copyright">
+        <span>CraftMind 2020- Built DigitMoni Web Development Class Cohort-1</span>
+      </div>
+    </footer>
+
 
   </main>
 

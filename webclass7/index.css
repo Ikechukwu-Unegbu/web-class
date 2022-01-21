@@ -1,0 +1,28 @@
+body{
+  background-color: aliceblue;
+
+}
+main{
+  display: flex;
+  flex-direction: column;
+  /* justify-content: center;
+  align-items: center;
+  width: 100%; */
+}
+form{
+  display: flex;
+  flex-direction: column;
+  grid-gap: 1rem;
+  background-color: white;
+  padding: 1rem;
+  width: 80%;
+  /* justify-content: center;
+  align-items: center; */
+  /* justify-self: center;
+  align-self: center; */
+}
+
+button{
+  padding: 0.5rem;
+  background-color: grey;
+}

@@ -334,3 +334,79 @@ header{
   background-color: #3970F2;
 }
 
+.section_seven{
+  display: flex;
+  flex-direction: row;
+ 
+  height: 40vh;
+}
+.sectioin_seven_left{
+  width: 50%;
+  /* display: inline; */
+}
+.sectioin_seven_left, .sectioin_seven_right{
+  height: 100%;
+}
+.section_seven_right{
+  width: 50%;
+  display:flex;
+  flex-direction: column;
+  /* justify-content: center; */
+  align-items: center;
+}
+/* .contact_form, h2{
+  padding-left: 2rem;
+} */
+h2{
+  padding-bottom: 1.5rem;
+}
+.contact_form{
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+
+}
+/* .form-group{
+  width: 100%;
+} */
+
+.form-input{
+  width: 100%;
+  padding: 0.6rem;
+  margin-bottom: 1rem;
+  border-radius: 5px;
+
+}
+
+.footer{
+  margin-top: 8rem;
+  display: flex;
+  flex-direction: column;
+  height: 15rem;
+  
+}
+.copyright{
+  height: 20%;
+  background-color: #4E4F52;
+  color: white;
+  text-align: center;
+  padding-top: 1.2rem;
+  font-size: larger;
+}
+
+.social{
+  height: 80%;
+  background-color: #333;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+/* .copyright span{
+  padding-top: 1.2rem;
+} */
+
+.social i{
+  margin: 2rem;
+  color: white;
+}

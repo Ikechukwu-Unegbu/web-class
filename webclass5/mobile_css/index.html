@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    @media only screen and (max-width: 500px) {
+      body {
+        background: red;
+      }
+
+      #smartphone h1 {
+        display: block;
+      }
+    }
+
+    /* Tablet */
+    @media(min-width: 501px) and (max-width: 768px) {
+      body {
+        background: blue;
+      }
+
+      #tablet h1 {
+        display: block;
+      }
+    }
+
+    /* Normal */
+    @media(min-width: 769px) and (max-width: 1200px) {
+      body {
+        background: green;
+      }
+
+      #normal h1 {
+        display: block;
+      }
+    }
+
+    /* Widescreen */
+    @media(min-width: 1201px) {
+      body {
+        background: black;
+      }
+
+      #widescreen h1 {
+        display: block;
+      }
+    }
+
+    /* Landscape */
+    @media(max-height: 500px) {
+      body {
+        background: orange;
+      }
+
+      #landscape h1 {
+        display: block;
+      }
+      
+    }
+  </style>
+</head>
+<body>
+  <h2 class="widescreen">Widescreen</h2>
+  <h2 class="tablet">tablet</h2>
+  <h2 class="smaller">smaller screen</h2>
+  <h2 class="normal">Normal screen</h2>
+</body>
+</html>

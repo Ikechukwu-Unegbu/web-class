@@ -1,0 +1,31 @@
+.container{
+  height: 30vh;
+  width: 100%;
+  background-color: rgb(117, 115, 112);
+  color: white;
+
+  display: flex;
+  flex-direction: column;
+  grid-gap: 2rem;
+  justify-content: center;
+  align-items: center;
+}
+
+.dom_btn{
+  padding: 0.6rem;
+  width: 8rem;
+
+  font-size: larger;
+  font-weight: bold;
+  color: rgb(104, 104, 219);
+
+
+  box-shadow: 4px 4px 4px white;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+}
+
+.dom_sentence{
+  font-size: x-large;
+}
