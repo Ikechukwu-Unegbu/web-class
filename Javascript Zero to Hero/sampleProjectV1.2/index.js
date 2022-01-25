@@ -19,10 +19,19 @@ form.addEventListener('submit', function(e){
 
   if(postsArray.length !==0){
     emptyMsg.style.display = 'none';
+
+    //clear all existing html nodes from previous posts
+    posts_container.innerHTML = '';
+    //reprint the entire array afresh on the dom
+    postsArray.forEach(function(post){
+      console.log(postsArray)
+  
+      let div = document.createElement('div');
+      div.innerText = post;
+      posts_container.appendChild(div);
+    })
   }
-  let div = document.createElement('div');
-  div.innerText = textarea.value;
-  posts_container.appendChild(div);
+
 
   //making the textarea empty after posting
   textarea.value = '';

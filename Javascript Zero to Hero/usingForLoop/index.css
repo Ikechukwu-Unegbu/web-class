@@ -1,0 +1,19 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body{
+
+}
+
+img{
+  width: 100%;
+}
+.container{
+  padding: 1.3rem;
+display: grid;
+grid-template-columns: repeat(3, 1fr);
+grid-gap: 2rem;
+}
