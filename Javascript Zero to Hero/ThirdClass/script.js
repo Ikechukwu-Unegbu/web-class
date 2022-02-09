@@ -47,8 +47,8 @@ testDiv.classList.replace('bg', 'bg_warning');
 console.log(testDiv.classList);
 
 //removing a child node
-let childNodeBox = document.getElementById('box2');
-childNodeBox.style.display = 'none';
+let unwantedNode = document.getElementById('box2');
+unwantedNode.style.display = 'none';
 
 //testDiv.removeChild(childNodeBox);
 

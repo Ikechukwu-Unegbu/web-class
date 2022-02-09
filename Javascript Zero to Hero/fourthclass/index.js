@@ -54,3 +54,8 @@ for (const [monkey, banana] of Object.entries(Obj4)) {
   console.log(`${monkey}: ${banana}`);
 }
 
+
+sole.log(addition);
+
+
+
