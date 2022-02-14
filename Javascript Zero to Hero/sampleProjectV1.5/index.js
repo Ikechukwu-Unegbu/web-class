@@ -15,6 +15,8 @@ let chars = 'ABCDEFGHIJKLMNOPQRS&$#*@!TUVWXYZabcdefghijklmnopqrstuvwxyz012345678
 
 function initialize(){
   checkStorage();
+
+  passStorageResultToHTML();
 }
 initialize();
 
@@ -63,4 +65,50 @@ form.addEventListener('submit', function(e){
   textarea.value = '';
 })
 
-console.log(localStorage.length);
+function passStorageResultToHTML(){
+  const storageResult = window.localStorage;
+  const storeArr = Object.values(storageResult)
+
+  for(const [key, value] of Object.entries(storageResult)){
+    let postarr = value.split(' ');
+    // console.log(postarr);
+    let postTitle = postarr.slice(0, 4);
+    postTitle = postTitle.toString().replace(/\,/g, " ") +'....';;
+    // console.log(postTitle);
+
+    htmlMarkup = `
+    <div id="notes" class="notes">
+      <div class="notes-header">
+        <small>02-03-2020</small>
+        <small>Edit</small>
+        <small>Delete</small>
+      </div>  
+      <div class="notes-body">
+        <div class="">
+          <h3><p onclick="fullNote(this.id)" id="${key}" class="title">${postTitle}</p></h3>
+        </div>
+      </div>
+    </div>`;
+    
+    let referenceNode = document.querySelector('#post');
+    referenceNode.insertAdjacentHTML('afterend', htmlMarkup);
+  }
+
+  //console.log(storeArr);
+}
+
+function fullNote(clicked_id){
+  let storedItems = window.localStorage;
+  // let storedKeys = Object.keys(storedItems);
+  let targetPost = storedItems[clicked_id];
+  let classNotes = document.getElementsByClassName('notes');
+  console.log(classNotes);
+  for(i of classNotes){
+    i.style.display = 'none';
+  }
+  
+  textarea.style.display = 'none';
+
+  form_btn.style.display = 'none';
+  //console.log(targetPost);
+}
