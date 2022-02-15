@@ -13,6 +13,8 @@ let postsArray = [];
 
 let chars = 'ABCDEFGHIJKLMNOPQRS&$#*@!TUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
 
+let editingTargetId = '';
+
 function initialize(){
   checkStorage();
 
@@ -59,10 +61,17 @@ function addToStorage(uniqueKey, userPost){
 
 form.addEventListener('submit', function(e){
   e.preventDefault();
-  let key = uniqueIDGenerator(10);
   
-  addToStorage(key, textarea.value);
-  textarea.value = '';
+  if(form_btn.innerText == 'Post'){
+    let key = uniqueIDGenerator(10);
+    addToStorage(key, textarea.value);
+    textarea.value = '';
+  }else{
+    // console.log('You are editing and you need to write edditng script');
+    localStorage[editingTargetId] = textarea.value;
+   
+    // console.log(targetNote);
+  }
 })
 
 function passStorageResultToHTML(){
@@ -80,8 +89,8 @@ function passStorageResultToHTML(){
     <div id="notes" class="notes">
       <div class="notes-header">
         <small>02-03-2020</small>
-        <small>Edit</small>
-        <small>Delete</small>
+        <small id="${key}" onclick="editNote(this.id)">Edit</small>
+        <small id="${key}" onclick="deleteNote(this.id)">Delete</small>
       </div>  
       <div class="notes-body">
         <div class="">
@@ -102,7 +111,7 @@ function fullNote(clicked_id){
   // let storedKeys = Object.keys(storedItems);
   let targetPost = storedItems[clicked_id];
   let classNotes = document.getElementsByClassName('notes');
-  console.log(classNotes);
+  // console.log(classNotes);
   for(i of classNotes){
     i.style.display = 'none';
   }
@@ -110,5 +119,44 @@ function fullNote(clicked_id){
   textarea.style.display = 'none';
 
   form_btn.style.display = 'none';
+  htmlMarkup = `
+  <div id="notes" class="notes"> 
+    <div class="notes-header">
+      <small>02-03-2020</small>
+      <small id="${clicked_id}" onclick="editNote(this.id)">Edit</small>
+      <small  onclick="deleteNote(this.id)" id="${clicked_id}">Delete</small>
+    </div>  
+    <div class="notes-body">
+      <div class="">
+        <h3><p onclick="fullNote(this.id)" id="${clicked_id}" class="title">${targetPost}</p></h3>
+      </div>
+    </div>
+  </div>`;  
   //console.log(targetPost);
+  let referenceNode = document.querySelector('#post');
+  referenceNode.insertAdjacentHTML('afterend', htmlMarkup);
+}
+
+function deleteNote(targetId){
+  let storedItems = window.localStorage;
+  // let storedKeys = Object.keys(storedItems);
+  let targetPost = storedItems[targetId];
+  storedItems.removeItem(targetId);  
+}
+
+function editNote(targetId){
+  console.log('edited');
+
+  let storedItems = window.localStorage;
+  // let storedKeys = Object.keys(storedItems);
+  let targetPost = storedItems[targetId];
+  let classNotes = document.getElementsByClassName('notes');
+  // console.log(classNotes);
+  for(i of classNotes){
+    i.style.display = 'none';
+  }
+  form_btn.innerText = 'Update';
+  textarea.innerText = targetPost;
+
+  editingTargetId = targetId;
 }
