@@ -22,6 +22,16 @@ function initialize(){
 }
 initialize();
 
+function deleteTimer(){
+document.getElementById('')
+}
+
+function generalActionMessageTime(idOfMessageToDisplay){
+  el = document.getElementById(idOfMessageToDisplay);
+}
+
+generalActionMessageTime('idname')
+
 function uniqueIDGenerator(len){
   let result = '';
   const charlength = chars.length;
@@ -141,7 +151,9 @@ function deleteNote(targetId){
   let storedItems = window.localStorage;
   // let storedKeys = Object.keys(storedItems);
   let targetPost = storedItems[targetId];
-  storedItems.removeItem(targetId);  
+  storedItems.removeItem(targetId); 
+  
+  deleteTimer();
 }
 
 function editNote(targetId){

@@ -55,7 +55,7 @@ for (const [monkey, banana] of Object.entries(Obj4)) {
 }
 
 
-sole.log(addition);
+console.log(addition);
 
 
 
