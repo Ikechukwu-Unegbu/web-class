@@ -37,11 +37,12 @@
 }
 
 .income_btn{
-  background-color: rgb(245, 90, 90);
+  background-color: rgb(61, 228, 61);
+  
 }
 
 .exp_btn{
-  background-color: rgb(61, 228, 61);
+  background-color: rgb(245, 90, 90);
 }
 
 .controls{

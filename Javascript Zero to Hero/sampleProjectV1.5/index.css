@@ -1,0 +1,12 @@
+#new-msg{
+  display:none;
+}
+
+#delete-mgs{
+  display: none;
+}
+
+#read_more{
+  text-decoration: none;
+  color: tomato;
+}

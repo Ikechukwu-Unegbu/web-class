@@ -5,7 +5,7 @@ let secondSt = 'Val';
 
 let personObj = {
   name:'Person name',
-  age:'Person age',
+  todadysDate:'Person age',
   career:'Person Career'
 }
 

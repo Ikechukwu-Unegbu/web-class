@@ -49,9 +49,6 @@ function checkStorage(){
   }else{
     hideElement('empty_message');
   }
-  // let storageState;
-  // localStorage.length==0?storageState= true:storageState=false;
-  // return storageState;
 }
 
 function displayElement(targetElementID){
@@ -64,9 +61,31 @@ function hideElement(targetElementID){
   target.style.display = 'none';
 }
 
+function hide(){
+  msg = document.getElementById('new-msg');
+  msg.style.display = 'none';
+}
 
+function dateGenerator(){
+  var today = new Date();
+  var dd = String(today.getDate()).padStart(2, '0');
+  var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
+  var yyyy = today.getFullYear();
+
+   
+}
+ 
 function addToStorage(uniqueKey, userPost){
-  window.localStorage.setItem(uniqueKey, userPost);
+  // let todaysDate = dateGenerator();
+  // dataToStore = {
+  //   postDate:todaysDate,
+  //   post:userPost
+  // };
+  window.localStorage.setItem(uniqueKey,userPost);
+  msg = document.getElementById('new-msg');
+  msg.style.display = 'block';
+
+  setTimeout(hide, 10000);
 }
 
 form.addEventListener('submit', function(e){
@@ -79,7 +98,6 @@ form.addEventListener('submit', function(e){
   }else{
     // console.log('You are editing and you need to write edditng script');
     localStorage[editingTargetId] = textarea.value;
-   
     // console.log(targetNote);
   }
 })
@@ -92,7 +110,7 @@ function passStorageResultToHTML(){
     let postarr = value.split(' ');
     // console.log(postarr);
     let postTitle = postarr.slice(0, 4);
-    postTitle = postTitle.toString().replace(/\,/g, " ") +'....';;
+    postTitle = postTitle.toString().replace(/\,/g, " ") +`<a id='read_more' href=''>...read more</a>`;;
     // console.log(postTitle);
 
     htmlMarkup = `
@@ -147,14 +165,29 @@ function fullNote(clicked_id){
   referenceNode.insertAdjacentHTML('afterend', htmlMarkup);
 }
 
-function deleteNote(targetId){
-  let storedItems = window.localStorage;
-  // let storedKeys = Object.keys(storedItems);
-  let targetPost = storedItems[targetId];
-  storedItems.removeItem(targetId); 
-  
-  deleteTimer();
+function deleteMgs(){
+  document.getElementById('delete-mgs').style.display = 'none';
+  location.reload();
 }
+
+function reloadAfterDelete(){
+  location.reload();
+}
+
+  function deleteNote(targetId){
+    let storedItems = window.localStorage;
+    // let storedKeys = Object.keys(storedItems);
+    let targetPost = storedItems[targetId];
+    storedItems.removeItem(targetId); 
+    // location.reload();
+  
+    document.getElementById('delete-mgs').style.display = 'block';
+    
+    setTimeout(deleteMgs, 5000);
+  }
+
+
+
 
 function editNote(targetId){
   console.log('edited');
