@@ -58,3 +58,16 @@
   flex-direction: row;
   grid-gap: 2rem;
 }
+
+#message{
+  width: 80%;
+  height: 4rem;
+  background-color: gainsboro;
+  color:red;
+  font-size: large;
+  font-weight: bolder;
+
+  display: none;
+  justify-content: center;
+  align-items: center;
+}
