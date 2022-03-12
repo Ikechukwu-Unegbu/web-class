@@ -5,15 +5,15 @@ let income_btn = document.getElementById('income_btn');
 let exp_btn = document.getElementById('exp_btn');
 let warning = document.getElementById('warning');
 let chars = 'ABCDEFGHIJKLMNOPQRS&$#*@!TUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
-
+let incomeHistory_button = document.getElementById('income_history_button');
 
 
 function init(){
   getbal();
   //localStorage.clear();
 
-  console.log(localStorage)
-  
+  //console.log(localStorage)
+  mapToHTML();
 }
 
 init();
@@ -93,6 +93,11 @@ exp_btn.addEventListener('click', function(e){
 
 });
 
+
+incomeHistory_button.addEventListener('click', function(){
+  incomeHistory();
+});
+
 // define id generator function
 
 
@@ -117,6 +122,66 @@ function addToStore(amount, explanation, status){
   //call your id generator
   let uniqueID = uniqueIDGenerator(5);
   localStorage.setItem(uniqueID, JSON.stringify(data))
+}
+
+
+function mapToHTML(){
+  const storageResult = window.localStorage;
+  // const storeArr = Object.values(storageResult)
+  for(const[key, value] of Object.entries(storageResult)){
+    let parsedValue = JSON.parse(value);
+    console.log(parsedValue);
+    let html;
+    if(parsedValue.status == 'income'){
+       html =`
+       <div  id="${key}"class="trnx">
+        <b>+</b>
+        <p>${parsedValue.purpose} <b>...for price of N${parsedValue.amount}</b></p>
+        <small>${parsedValue.dateOfPost}</small>
+      </div>`;
+      document.getElementById('feed').innerHTML = html;
+    }else if(parsedValue.status == 'expenses'){
+       html = `
+       <div class="trnx">
+        <b>-</b>
+        <p>${parsedValue.purpose} <b>...for price of N${parsedValue.amount}</b></p>
+        <small>${parsedValue.dateOfPost}</small>
+      </div>`;
+      document.getElementById('feed').innerHTML = html;
+    }else{
+      
+    }
+    // console.log(html);
+    // let node = `<div>${html}</div
+    
+  }
+  
+}
+
+function incomeHistory(){
+  const storageResult = window.localStorage;
+  const storeArr = Object.values(storageResult)
+  for(const[key, value] of Object.entries(storageResult)){
+    let parsedValue = JSON.parse(value);
+    console.log(parsedValue);
+    // let html;
+    if(parsedValue.status == 'income'){
+       let html =`
+       <div  id="${key}"class="trnx">
+        <b>+</b>
+        <p>${parsedValue.purpose} <b>...for price of N${parsedValue.amount}</b></p>
+        <small>${parsedValue.dateOfPost}</small>
+      </div>`;
+      document.getElementById('feed').style.display = 'none';
+      let income_title  = document.querySelector('#income_header'); 
+      let income_div = document.getElementById('income_history');
+      income_div.style.display = 'block';
+      //appending local storage content after the title
+      
+      income_title.insertAdjacentHTML('afterend', html);
+    }
+   
+  }
 }
 
 // console.log(localStorage);
