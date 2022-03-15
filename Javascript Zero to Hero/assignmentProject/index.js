@@ -8,6 +8,10 @@ let chars = 'ABCDEFGHIJKLMNOPQRS&$#*@!TUVWXYZabcdefghijklmnopqrstuvwxyz012345678
 let incomeHistory_button = document.getElementById('income_history_button');
 
 
+// let domState = {
+
+// }
+
 function init(){
   getbal();
   //localStorage.clear();
@@ -139,21 +143,18 @@ function mapToHTML(){
         <p>${parsedValue.purpose} <b>...for price of N${parsedValue.amount}</b></p>
         <small>${parsedValue.dateOfPost}</small>
       </div>`;
-      document.getElementById('feed').innerHTML = html;
-    }else if(parsedValue.status == 'expenses'){
+     
+    }else{
        html = `
        <div class="trnx">
         <b>-</b>
         <p>${parsedValue.purpose} <b>...for price of N${parsedValue.amount}</b></p>
         <small>${parsedValue.dateOfPost}</small>
       </div>`;
-      document.getElementById('feed').innerHTML = html;
-    }else{
-      
+      // document.getElementById('feed').innerHTML = html;
     }
-    // console.log(html);
-    // let node = `<div>${html}</div
-    
+    let feedtitle = document.getElementById('all-feed');
+    feedtitle.insertAdjacentHTML('afterend', html);
   }
   
 }
@@ -173,6 +174,7 @@ function incomeHistory(){
         <small>${parsedValue.dateOfPost}</small>
       </div>`;
       document.getElementById('feed').style.display = 'none';
+      
       let income_title  = document.querySelector('#income_header'); 
       let income_div = document.getElementById('income_history');
       income_div.style.display = 'block';
@@ -180,8 +182,8 @@ function incomeHistory(){
       
       income_title.insertAdjacentHTML('afterend', html);
     }
-   
   }
+  document.getElementById('income_history_button').disabled = true;
 }
 
 // console.log(localStorage);
