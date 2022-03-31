@@ -1,0 +1,28 @@
+.form{
+  display: flex;
+  flex-direction: column;
+  grid-gap: 2rem;
+
+  justify-content: center;
+  align-items: center;
+
+  width: 100%;
+  margin-top: 2rem;
+}
+
+.second{
+  background-color: red;
+}
+
+.form input{
+  width: 60%;
+  padding: 1rem;
+  border-radius: 15px;
+}
+
+.form button{
+  background-color: blue;
+  padding: 0.4rem;
+  color: white;
+  width: 8rem;
+}
